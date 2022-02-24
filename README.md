@@ -28,5 +28,3 @@ Our model can predict asthma attack incidence following an asthma or respiratory
 
 [1]: https://twitter.com/HollyTibble
 [1.2]: http://i.imgur.com/wWzX9uB.png
-
-v
