@@ -1,12 +1,11 @@
 <!-- Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 
-# Short-Term Adult Asthma Attack Prediction using Electronic Health Record Data in the Primary Care Setting
+# Development and Validation of a Machine Learning Risk Prediction Model for Asthma Attacks in Adults in Primary Care
+
 
 Welcome!  In this project,  we provide a robust generalizable methodology for mining large longitudinal electronic health care data towards predicting clinical outcomes, using asthma and asthma attacks as a testbed. We thoroughly investigate different statistical learning models with different configurations to optimize the developed models, and systematically validate out-of-sample performance to objectively report model generalizability. We envisage these results could be translated to clinical practice for asthma, and the reported methodology may be adapted to study other related chronic diseases on the basis of mining routinely collected longitudinal clinical data.
 
 The protocol paper for this study is entitled ["Predicting asthma attacks in primary care: protocol for developing a machine learning-based prediction model"](https://bmjopen.bmj.com/content/9/7/e028375) (Tibble et al., 2019, 9:e028375 BMJ Open).
-
-The code, written in the R programming language, and clinical code lists for this project will be made availble in this repository once the paper has been published. 
 
 Thank you for visiting,
 
@@ -15,15 +14,18 @@ Holly Tibble [![alt text][1.2]][1]
 
 
 ## Paper Abstract
-Primary care consultations provide an opportunity for patients and clinicians to assess asthma attack risk.  Accurate prediction of that risk can prompt timely primary care intervention, increase regularity of primary care visits, promote risk-reducing lifestyle choices, and encourage patients to seek emergency care following symptom deterioration.  In this paper, we utilise the wealth of data recorded in electronic health records to develop and test a model for predicting asthma attacks within twelve weeks. 
+Introduction:
+Primary care consultations provide an opportunity for patients and clinicians to assess asthma attack risk. Using a data-driven risk prediction tool with routinely collected health records may be an efficient way to aid promotion of effective self-management, and support clinical decision making. 
 
-The model features were patient demographics, smoking status, obesity, asthma treatment regimen and adherence, peak expiratory flow, history of asthma attacks, respiratory infections, blood eosinophil counts, and comorbidities.  The final analysis dataset comprised 40 features and 746,557 samples (asthma or respiratory infections primary care encounters) for 20,846 individuals, over eight years.
+Methods:
+Longitudinal Scottish primary care data for 21,250 asthma patients were used to predict the risk of asthma attacks in the following year.  A selection of machine learning algorithms (i.e., Naïve Bayes Classifier, Random Forests, and Extreme Gradient Boosting), hyperparameters, training data enrichment methods were explored, and validated in a random unseen data partition. 
 
-A repeated, random, split-sample approach was used to train and test multiple binary classification models, comparing imbalanced data handling approaches and statistical learning algorithms.  A 10% partition of the data samples was held-out for final model testing, with the remaining 90% used for model training, internal selection, and validation.  
+Results:
+Our final Extreme Gradient Boosting model achieved the best performance when no training data enrichment was applied. Around 1 in 3 (36.2%) predicted high-risk patients had an attack within one year of consultation, compared to approximately 1 in 16 in the predicted low-risk group (6.7%).  The model was well calibrated, with a calibration slope of 1.02 and an intercept of 0.004, and the Area under the Curve was 0.75.
 
-In the unseen held-out data partition, our optimised random forest model had a balanced accuracy of 75.9% (sensitivity 52.3%, and specificity 99.6%).  Those with previous asthma attacks have higher sensitivity (66.9 versus 40.8%), with modest differences in positive predictive value (76.7% versus 74.5%).    
-
-Our model can predict asthma attack incidence following an asthma or respiratory infection primary care consultation with high performance.  This can be developed into a clinical decision support tool to enhance patient care. 
+Conclusion:
+This model has the potential to increase the efficiency of routine asthma care by creating new personalized care pathways mapped to predicted risk of asthma attacks, such as priority ranking patients for scheduled consultations and interventions. Furthermore, it could be used to educate patients about their individual risk and risk factors, and promote healthier lifestyle changes, use of self-management plans, and early emergency care seeking following rapid symptom deterioration. 
+port tool to enhance patient care. 
 
 
 [1]: https://twitter.com/HollyTibble
