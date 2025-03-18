@@ -63,11 +63,11 @@ write.csv(Importance,file="../Data_to_extract/Main_results_importance.csv")
 
 Average_Importance <-Importance %>%
   group_by(variable) %>%
-  summarise(mean_c = round(mean(coefficient),5),
-            min_c = round(min(coefficient),5),
-            max_c = round(max(coefficient),5),
+  mutate(OR = exp(coefficient)) %>%
+  summarise(mean_OR = round(mean(OR),5),
+            min_OR = round(min(OR),5),
+            max_OR = round(max(OR),5),
             perc_sig = sum(p_value<0.05)*100/n()) 
-View(Average_Importance %>% mutate(abs = abs(mean_c)) %>% arrange(-abs))
 
 ##################################################################
 #      Full retrain
